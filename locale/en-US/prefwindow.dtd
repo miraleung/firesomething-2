@@ -1,0 +1,63 @@
+<!ENTITY prefwindow.title "Firesomething Options">
+<!ENTITY prefpane.label "General">
+<!ENTITY chooseFormat.description "Set the browser title format:">
+
+<!ENTITY firesomething.mainprefs.title "Firesomething Options">
+
+<!ENTITY firesomething.tab.firesm "Set Title">
+<!ENTITY firesomething.tab.names "Names">
+<!ENTITY firesomething.tab.images "Images">
+<!ENTITY firesomething.tab.useragent "User-Agent">
+<!ENTITY firesomething.tab.extras "Extras">
+
+<!ENTITY firesomething.Firesm.label "Set title">
+<!ENTITY firesomething.Firesm.description "Choose the browser title:">
+
+<!ENTITY firesomething.Names.label "Names">
+<!ENTITY firesomething.Names.description "Configure your name randomizer lists here.">
+
+<!ENTITY firesomething.listVendors.label "Vendors">
+<!ENTITY firesomething.listPrefixes.label "Prefixes">
+<!ENTITY firesomething.listNames.label "Names">
+
+<!ENTITY firesomething.SameName.caption "Single Name Mode">
+<!ENTITY firesomething.SameName.label "Use the same generated name for all browser windows">
+
+<!ENTITY firesomething.Images.label "Images">
+<!ENTITY firesomething.Images.description "Override default or themed branding images using these firesomething.">
+
+<!ENTITY firesomething.AboutImage.caption "About dialog image">
+<!ENTITY firesomething.Throbber1Image.caption "Throbber (stopped)">
+<!ENTITY firesomething.Throbber2Image.caption "Throbber (active)">
+
+<!ENTITY firesomething.UAString.label "User-Agent string">
+<!ENTITY firesomething.UAString.description "If you'd like to let webservers know you're running a rebranded version of &brandShortName;, you can have your custom browser name automatically inserted into the User-Agent string.">
+<!ENTITY firesomething.UAString.description2 "If you are concerned that some websites might not identify your browser correctly with the above feature enabled, you may also wish to add the original product name and version as a User-Agent &quot;comment&quot;. The tokens #name# and #version# will be replaced with the browser's original values.">
+<!ENTITY firesomething.RebrandUA.label "Rebrand User-Agent string">
+
+<!ENTITY firesomething.buttonAdd "Add">
+<!ENTITY firesomething.buttonLocateImage "Locate Image...">
+<!ENTITY firesomething.buttonRestore "Restore default">
+<!ENTITY firesomething.buttonFiresomething "Firesomething!">
+<!ENTITY firesomething.buttonClear "Clear">
+<!ENTITY firesomething.buttonApply "Apply">
+<!ENTITY firesomething.buttonSuggestions "Suggestions...">
+<!ENTITY firesomething.labelLocation "Location:">
+<!ENTITY firesomething.labelComment "Comment:">
+<!ENTITY firesomething.locateImage "Locate Image">
+
+<!ENTITY firesomething.titleUAComment "User-Agent Comment Suggestions">
+<!ENTITY firesomething.captionUAComment "User-Agent Comments">
+<!ENTITY firesomething.UAComment1 "#name#/#version#">
+<!ENTITY firesomething.UAComment2 "#name#/#version# rebrand">
+<!ENTITY firesomething.UAComment3 "#name#/#version# polymorph">
+<!ENTITY firesomething.UAComment4 "All your #name#/#version# are belong to Firesomething">
+
+<!ENTITY firesomething.extra.ShortcutCaption "Keyboard shortcuts">
+<!ENTITY firesomething.extra.ShortcutDescription "Keyboard shortcut Ctrl+` (grave accent) in the browser window generates a new product name.">
+<!ENTITY firesomething.extra.BookOfMozCaption "The Book of Mozilla">
+<!ENTITY firesomething.extra.BookOfMozDescription "If you go to about:mozilla you can read one of the verses of the Book of Mozilla. This extension publishes two more verses, written in a time of wondrous change within the Mozilla project. You can find these verses under about:firefox and about:firesomething.">
+<!ENTITY firesomething.extra.HiddenListsCaption "Firesm spacers and comments">
+<!ENTITY firesomething.extra.HiddenListsDescription "There are two hidden preferences for randomized name-spacers and firesm comments. The spacers go between the vendor name and the browser name, with the default value being a single space. The comments are displayed after the browser name. Both are pipe-delimited like the other lists. The preferences are as follows, and accessible through about:config:">
+<!ENTITY firesomething.extra.HiddenListsLabel1 "extensions.firesomething.lists.spacers">
+<!ENTITY firesomething.extra.HiddenListsLabel2 "extensions.firesomething.lists.comments">

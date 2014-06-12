@@ -1,0 +1,8 @@
+content	firesm	content/ contentaccessible=yes
+locale	firesm	en-US	locale/en-US/
+locale	firesm	ja-JP	locale/ja-JP/
+locale	firesm	pl-PL	locale/pl-PL/
+locale	firesm	de-DE	locale/de-DE/
+locale	firesm	ca-AD	locale/ca-AD/
+skin	firesm	classic/1.0	skin/
+overlay	chrome://browser/content/browser.xul	chrome://firesm/content/toolbaroverlay.xul

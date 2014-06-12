@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+     xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+
+  <Description about="urn:mozilla:install-manifest">
+    <em:id>firesomething2@quicksort.addons.mozilla.org</em:id>
+    <em:version>2.4</em:version>
+		<em:type>2</em:type>
+
+    <!-- Firefox -->
+    <em:targetApplication>
+      <Description>
+        <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+        <em:minVersion>17.0</em:minVersion>
+        <em:maxVersion>24.*</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+
+
+    <em:name>Firesomething-2</em:name>
+
+    <em:description>Firesomething updated for Firefox 17.0 to 24.0. Firesomething branding appears in the orange menu button. Ctrl+` (tilde key) generates a new random name.</em:description>
+    <em:creator>Mira Leung</em:creator>
+    <!-- optional items -->
+    <!--em:homepageURL>http://kb.mozillazine.org/Getting_started_with_extension_development</em:homepageURL-->
+    <em:optionsURL>chrome://firesm/content/prefwindow-Main.xul</em:optionsURL>
+    <em:iconURL>chrome://firesm/skin/icon.png</em:iconURL>
+		<em:contributor>Micheal O'Rourke http://www.cosmicat.com</em:contributor>
+		<em:contributor>Mira Leung emailmiraleung@gmail.com</em:contributor>
+
+  </Description>
+
+</RDF>
