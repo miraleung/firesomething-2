@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<!DOCTYPE window SYSTEM "chrome://firesm/locale/prefwindow.dtd">
+
+<dialog id="firesomething-options-UAComment"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	onload="onLoad();"
+	ondialogaccept="return onAccept();"
+	title="&firesomething.titleUAComment;"
+	buttons="accept,cancel">
+
+	<script type="application/x-javascript"><![CDATA[
+		
+		function onLoad() {
+			var hListbox = document.getElementById("listUAComments");
+			hListbox.addEventListener("dblclick", listDoubleClick, true);
+		}
+		
+		function listDoubleClick() {
+			onAccept();
+			window.close();
+		}
+		
+		function onAccept() {
+			var comment = document.getElementById("listUAComments").value;
+			if (comment) {
+				var hTextbox = window.opener.document.getElementById("textUAComment");
+				hTextbox.value = comment;
+				hTextbox.doCommand();
+			}
+			return true;
+		}
+		
+	]]></script>
+    
+	<groupbox>
+		<caption label="&firesomething.captionUAComment;"/>
+		<listbox id="listUAComments" rows="5" seltype="single" style="width:27em">
+			<listitem label="&firesomething.UAComment1;" value="&firesomething.UAComment1;"/>
+			<listitem label="&firesomething.UAComment2;" value="&firesomething.UAComment2;"/>
+			<listitem label="&firesomething.UAComment3;" value="&firesomething.UAComment3;"/>
+			<listitem label="&firesomething.UAComment4;" value="&firesomething.UAComment4;"/>
+		</listbox>
+	</groupbox>
+	
+</dialog>

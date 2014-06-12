@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://firesm/skin/" type="text/css"?>
+
+<!DOCTYPE prefwindow SYSTEM "chrome://firesm/locale/prefwindow.dtd">
+
+<prefwindow id="firesomething-preferences"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	title="&firesomething.mainprefs.title;"
+	style="min-width: 550px; min-height: 370px; max-width: 650px; max-height: 430px; "
+	buttons="accept,cancel,extra1"
+	buttonlabelextra1="&firesomething.buttonApply;"
+	ondialogaccept="return onAccept();"
+	ondialogextra1="onAccept();">						
+	
+	<prefpane id="options-names-pane" label="&firesomething.tab.names;"
+			image="chrome://firesm/skin/names.png"
+			src="chrome://firesm/content/prefpane-Names.xul"/>
+	<prefpane id="options-images-pane" label="&firesomething.tab.images;"
+			image="chrome://firesm/skin/images.png"
+			src="chrome://firesm/content/prefpane-Images.xul"/>
+	<prefpane id="options-useragent-pane" label="&firesomething.tab.useragent;"
+			image="chrome://firesm/skin/useragent.png"
+			src="chrome://firesm/content/prefpane-UserAgent.xul"/>
+	<prefpane id="options-extras-pane" label="&firesomething.tab.extras;"
+			image="chrome://firesm/skin/extras.png"
+			src="chrome://firesm/content/prefpane-Extras.xul"/>
+
+<script type="application/x-javascript" src="chrome://firesm/content/toolbar-overlay.js"/>
+	<script type="application/x-javascript"><![CDATA[
+		
+		function onAccept() {
+			document.getElementById("options-names-pane").writePreferences();
+			document.getElementById("options-images-pane").writePreferences();
+			document.getElementById("options-useragent-pane").writePreferences();
+			com.firesomething.firesm.setUserAgent();
+			return true;
+		}
+				
+	]]></script>
+
+</prefwindow>

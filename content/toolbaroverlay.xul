@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://firesm/skin/toolbaroverlay.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://firesm/locale/firesm.dtd">
+<overlay id="menuoverlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script type='application/x-javascript'
+					src='chrome://firesm/content/utils-ubiquity.js'></script>
+  <script type='application/x-javascript'
+					src='chrome://firesm/content/my-utils.js'></script>
+  <script type='application/x-javascript' 
+					src='chrome://firesm/content/toolbar-overlay.js'></script>
+	<script type="application/x-javascript" src="chrome://firesm/content/_PrefManager.js"/>
+		<script type="application/x-javascript" src="chrome://firesm/content/book_of_mozilla/registerExcerpts.js"/>
+  <stringbundleset id="stringbundleset">
+    <stringbundle id="firesm-strings" src="chrome://firesm/locale/firesm.properties"/>
+  </stringbundleset>
+ 
+ <script> 
+ com.firesomething.firesm.setNames();
+ </script>
+ 
+	<commandset id="mainCommandSet">
+		<command id="cmd_firesomethingRefresh" oncommand="com.firesomething.firesm.setNames();"/>
+	</commandset>
+	
+	<keyset id="mainKeyset">
+		<key id="key_firesomethingRefresh" key="`"
+				command="cmd_firesomethingRefresh" modifiers="accel"/>
+	</keyset>
+	
+	<menupopup id="menu_ToolsPopup">
+  	<menuitem label="&firesm.label;"
+							accesskey="&firesmSettings.accesskey;"
+							oncommand="com.firesomething.firesm.showFiresmSettings();"/>
+  </menupopup>
+	
+</overlay>

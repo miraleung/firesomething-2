@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE overlay SYSTEM "chrome://firesm/locale/prefwindow.dtd">
+
+<overlay id="prefpane-Images"
+		xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	
+	<prefpane id="options-images-pane">
+		<preferences>
+			<preference id="prefAboutImage" name="extensions.firesomething.images.about" type="string" instantApply="false"/>
+		</preferences>
+		
+		<data id="locateImage-title" label="&firesomething.locateImage;"/>
+		
+		<groupbox flex="1">
+			<caption label="&firesomething.AboutImage.caption;"/>
+			<hbox align="center">
+				<label value="&firesomething.labelLocation;" control="option.aboutImageURL"/>
+				<textbox id="aboutImageURL" preference="prefAboutImage" size="30" flex="1"/>
+			</hbox>
+			<hbox>
+				<spacer flex="1"/>
+				<button label="&firesomething.buttonLocateImage;" oncommand="doLocateImage('aboutImageURL')"/>
+				<button label="&firesomething.buttonFiresomething;" oncommand="doSetAboutImageFiresomething();"/>
+				<button label="&firesomething.buttonClear;" oncommand="clearTextbox('aboutImageURL')"/>
+			</hbox>
+		</groupbox>
+		<spacer flex="30"/>
+	</prefpane>
+
+	<script type="application/x-javascript"><![CDATA[
+		
+		function doLocateImage(strTextboxID) {
+			var label = document.getElementById("locateImage-title").getAttribute("label");
+			try {
+				const nsIFilePicker = Components.interfaces.nsIFilePicker;
+				var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
+				fp.init(window, label, nsIFilePicker.modeOpen);
+				fp.appendFilters(nsIFilePicker.filterImages);
+				if (fp.show() == nsIFilePicker.returnOK) {
+					var hTextbox = document.getElementById(strTextboxID);
+					hTextbox.value = fp.fileURL.spec;
+					hTextbox.doCommand();
+				}
+			} catch(ex) { dump(ex + "\n"); }
+		}
+		
+		function doSetAboutImageFiresomething() {
+			var hTextbox = document.getElementById("aboutImageURL");
+			hTextbox.value = "chrome://firesm/skin/about.jpg";
+			hTextbox.doCommand();
+		}
+		
+		function clearTextbox(strTextboxID) {
+			var hTextbox = document.getElementById(strTextboxID);
+			hTextbox.value = "";
+			hTextbox.doCommand();
+		}
+
+	]]></script>
+	
+</overlay>

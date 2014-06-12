@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE overlay [
+<!ENTITY % brandDTD SYSTEM "chrome://branding/locale/brand.dtd" >
+%brandDTD;
+<!ENTITY % prefsENT SYSTEM "chrome://firesm/locale/prefwindow.dtd">
+%prefsENT;
+]>
+
+<overlay id="prefpane-UserAgent"
+		xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	
+	<prefpane id="options-useragent-pane">
+		<preferences>
+			<preference id="prefUARebrand" name="extensions.firesomething.useragent.rebrand" type="bool" instantApply="false"/>
+			<preference id="prefUAComment" name="extensions.firesomething.useragent.comment" type="string" instantApply="false"/>
+		</preferences>
+		
+		<description style="width:45em">&firesomething.UAString.description;</description>
+		<groupbox>
+      <hbox>
+      	<checkbox id="rebrandUA" preference="prefUARebrand" label="&firesomething.RebrandUA.label;"/>
+      	<spacer flex="1"/>
+			</hbox>
+		</groupbox>
+		<description style="width:45em">&firesomething.UAString.description2;</description>
+		<groupbox>
+			<hbox align="center">
+				<label value="&firesomething.labelComment;" control="dialog.commentUA"/>
+				<textbox id="textUAComment" preference="prefUAComment" size="30" flex="1"/>
+			</hbox>
+			<hbox>
+				<spacer flex="1"/>
+				<button label="&firesomething.buttonSuggestions;" oncommand="suggestUAComments()"/>
+				<button label="&firesomething.buttonClear;" oncommand="clearTextbox('textUAComment')"/>
+			</hbox>
+		</groupbox>
+		<spacer flex="30"/>
+	</prefpane>
+
+	<script type="application/x-javascript"><![CDATA[
+		
+		function suggestUAComments() {
+			document.documentElement.openSubDialog(
+					"chrome://firesm/content/dialog-UAComment.xul",
+					"_blank",
+					"chrome,resizable=yes,dependent=yes");
+		}
+
+		function clearTextbox(strTextboxID) {
+			var hTextbox = document.getElementById(strTextboxID);
+			hTextbox.value = "";
+			hTextbox.doCommand();
+		}
+		
+	]]></script>
+	
+</overlay>
